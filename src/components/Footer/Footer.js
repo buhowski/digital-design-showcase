@@ -1,11 +1,11 @@
 import React from 'react';
 
 import Form from '../Form';
-import { Logo, IconFooterLines } from '../../assets/SvgIcons';
+import { Logo, IconFooterLines, IconFb, IconIg } from '../../assets/SvgIcons';
 
 import './Footer.scss';
 
-const FooterNavList = ({ items, title, socialItem, className }) => (
+const FooterNavList = ({ items, title, className }) => (
 	<ul className={className}>
 		<li className='ul-title'>{title}</li>
 
@@ -17,6 +17,35 @@ const FooterNavList = ({ items, title, socialItem, className }) => (
 	</ul>
 );
 
+const FooterSocial = ({ items }) => (
+	<ul>
+		{items.map((item, index) => (
+			<li key={index}>
+				<a href={item.url}>{item.icon}</a>
+			</li>
+		))}
+	</ul>
+);
+
+const FooterAddress = ({ title, subtitle, address, suite, cityState, phone }) => {
+	return (
+		<div className='footer-address'>
+			<h3 className='ul-title'>
+				{title}
+
+				<span>{subtitle}</span>
+			</h3>
+
+			<p>
+				{address},<span>{suite}</span>
+				{cityState}
+			</p>
+
+			<p>P: {phone}</p>
+		</div>
+	);
+};
+
 const Footer = () => {
 	const navItemsService = [
 		{ link: '#', label: 'Transportation' },
@@ -26,23 +55,89 @@ const Footer = () => {
 		{ link: '#', label: 'Construction Management' },
 	];
 
+	const socialData = [
+		{ url: '#', icon: IconFb },
+		{ url: '#', icon: IconIg },
+	];
+
+	const addressData = [
+		{
+			title: 'Houston',
+			subtitle: '(Headquarters)',
+			address: '575 N. Dairy Ashford Rd.',
+			suite: 'Suite 650',
+			cityState: 'Houston, TX 77079',
+			phone: '713.975.8555',
+		},
+		{
+			title: 'Houston',
+			address: '575 N. Dairy Ashford Rd.',
+			suite: 'Suite 650',
+			cityState: 'Houston, TX 77079',
+			phone: '713.975.8555',
+		},
+		{
+			title: 'Houston',
+			address: '575 N. Dairy Ashford Rd.',
+			suite: 'Suite 650',
+			cityState: 'Houston, TX 77079',
+			phone: '713.975.8555',
+		},
+	];
+
 	return (
 		<footer className='footer' id='contact-us'>
 			<div className='container'>
 				<div className='footer-container'>
 					<span className='footer__lines'>{IconFooterLines}</span>
 
-					<a href='/' className='footer__logo'>
-						{Logo}
-					</a>
+					<div className='footer-logo'>
+						<a href='/' className='footer__logo'>
+							{Logo}
+						</a>
+					</div>
 
-					<div className='footer-form'>
-						<div className=''>
+					<div className='footer-row'>
+						<nav className='footer-nav footer-block'>
 							<FooterNavList className='' items={navItemsService} title='Services' />
+							<FooterNavList className='' items={navItemsService} title='Services' />
+							<FooterNavList className='' items={navItemsService} title='Services' />
+						</nav>
+
+						<div className='footer-form footer-block'>
+							<h2 className='h2'>Contact Us</h2>
+							<Form />
+						</div>
+					</div>
+
+					<div className='footer-row'>
+						<div className='footer-block'>
+							<div className='footer-nav'>
+								{addressData.map((data, index) => (
+									<FooterAddress key={index} {...data} />
+								))}
+							</div>
+
+							<div className='footer-copy'>
+								<p>&copy; 2024 OTHON, INC. All Rights Reserved.</p>
+								<a href='##'>Terms and Conditions</a>
+							</div>
 						</div>
 
-						<div className=''>
-							<Form />
+						<div className='footer-block'>
+							<div className='footer-nav'></div>
+
+							<div className='footer-policy'>
+								<p>
+									Created with ♡ by <a href='##'>DD.NYC®</a>
+								</p>
+
+								<div className='footer-social'>
+									<a href='##'>Privacy Policy</a>
+
+									<FooterSocial items={socialData} />
+								</div>
+							</div>
 						</div>
 					</div>
 				</div>

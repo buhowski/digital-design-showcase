@@ -2,6 +2,12 @@
 
 .footer {
 	color: $white;
+	font-size: 16px;
+
+	&-logo {
+		width: 100%;
+		text-align: right;
+	}
 
 	&__logo {
 		svg path {
@@ -9,8 +15,18 @@
 		}
 	}
 
+	.ul-title {
+		font-size: 20px;
+
+		span {
+			font-size: 16px;
+			display: block;
+		}
+	}
+
 	&-container {
 		border-radius: 20px;
+		padding: 45px;
 		overflow: hidden;
 		background-color: $primary-color;
 		position: relative;
@@ -25,5 +41,59 @@
 			left: 0;
 			z-index: -1;
 		}
+	}
+}
+
+.footer-row {
+	display: flex;
+}
+
+.footer-block {
+	width: 50%;
+}
+
+.footer-nav,
+.footer-copy,
+.footer-policy {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 16px;
+}
+
+.footer-address {
+	.ul-title {
+		min-height: 50px;
+		margin-bottom: 20px;
+	}
+
+	p {
+		color: rgba($white, 0.8);
+		max-width: 183px;
+
+		&:not(:last-child) {
+			margin-bottom: 24px;
+		}
+
+		span {
+			display: block;
+		}
+	}
+}
+
+.footer-copy p,
+.footer-social {
+	grid-column: span 2;
+}
+
+.footer-policy {
+}
+
+.footer-social {
+	display: flex;
+	align-items: flex-end;
+
+	ul {
+		display: flex;
+		gap: 23px;
 	}
 }
