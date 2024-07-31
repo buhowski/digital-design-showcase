@@ -1,0 +1,122 @@
+@import '../../styles/config';
+
+.hero {
+	color: $white;
+
+	&-section {
+		height: 665px;
+		position: relative;
+		border-radius: 20px;
+		overflow: hidden;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1;
+
+		&__title {
+			display: flex;
+			align-items: center;
+			justify-content: center;
+		}
+
+		&__img {
+			position: absolute;
+			z-index: -1;
+			width: 100%;
+			height: 100%;
+
+			img,
+			svg {
+				width: 100%;
+				height: 100%;
+			}
+
+			img {
+				object-fit: cover;
+			}
+
+			svg {
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 1;
+			}
+
+			&::after {
+				content: '';
+				display: block;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(#171717, $alpha: 0.3);
+				position: absolute;
+				top: 0;
+				left: 0;
+				z-index: 0;
+			}
+		}
+	}
+}
+
+// Service Cards styles
+.service-card {
+	position: relative;
+	border-radius: 26.67px;
+	overflow: hidden;
+	padding: 35px;
+	height: 280px;
+	z-index: 1;
+
+	&::after,
+	svg,
+	img {
+		transition: 0.3s;
+	}
+
+	&__title {
+		position: relative;
+		z-index: 1;
+		display: flex;
+		justify-content: space-between;
+	}
+
+	img {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		position: absolute;
+		top: 0;
+		left: 0;
+		z-index: -1;
+	}
+
+	&::after,
+	&::before {
+		content: '';
+		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		background-color: $primary-color;
+	}
+
+	&::before {
+		mix-blend-mode: color;
+		z-index: 0;
+	}
+
+	&:hover {
+		&::after {
+			opacity: 0;
+		}
+
+		img {
+			transform: scale(1.05);
+		}
+
+		svg {
+			transform: translate(5px, -5px);
+		}
+	}
+}
