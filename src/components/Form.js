@@ -1,85 +1,94 @@
 import React, { useState } from 'react';
 
-export const Form = () => {
-	// State hooks for managing form data, errors, focus states, submission state, positions, and token
-	const [formData, setFormData] = useState({
-		name: '',
-		email: '',
-		phone: '',
-		position_id: '',
-		photo: null,
-	});
+import { IconArrow } from '../assets/SvgIcons';
 
-	const [focused, setFocused] = useState({
-		// State for tracking focus state of form inputs
-		name: false,
-		email: false,
-		phone: false,
-		photo: false,
-	});
+const initialFormData = {
+	name: '',
+	email: '',
+	subject: '',
+	message: '',
+};
 
-	// Function to handle input field changes
-	const handleChange = (event) => {
-		const { name, value, type, files } = event.target;
-		const updatedValue = type === 'file' ? files[0] : value;
+const validateForm = (data) => {
+	const errors = {};
+	if (!data.name) errors.name = 'This is a required field.';
+	if (!data.email) errors.email = 'This is a required field.';
+	if (!data.subject) errors.subject = 'This is a required field.';
+	if (!data.message) errors.message = 'This is a required field.';
+	return errors;
+};
 
-		setFormData((prevData) => ({
-			...prevData,
-			[name]: updatedValue,
-		}));
+const ContactForm = () => {
+	const [formData, setFormData] = useState(initialFormData);
+	const [errors, setErrors] = useState({});
+
+	const handleChange = (e) => {
+		const { name, value } = e.target;
+		setFormData((prevData) => ({ ...prevData, [name]: value }));
+		setErrors((prevErrors) => ({ ...prevErrors, [name]: '' }));
 	};
 
-	// Function to handle input focus
-	const handleFocus = (event) => {
-		const { name } = event.target;
+	const handleSubmit = (e) => {
+		e.preventDefault();
+		const newErrors = validateForm(formData);
 
-		setFocused((prevFocused) => ({
-			...prevFocused,
-			// Update focus state to true for the specific input
-			[name]: true,
-		}));
-	};
+		if (Object.keys(newErrors).length) {
+			setErrors(newErrors);
+		} else {
+			// Perform form submission actions here
+			console.log('Form submitted:', formData);
 
-	// Function to handle input blur
-	const handleBlur = (event) => {
-		const { name } = event.target;
-
-		setFocused((prevFocused) => ({
-			...prevFocused,
-			// Update focus state to false for the specific input
-			[name]: false,
-		}));
-	};
-
-	// Function to get class name for input label based on focus or input value
-	const getLabelClassName = (fieldName) => {
-		// Determine label class based on input focus or value
-		return focused[fieldName] || formData[fieldName] ? 'focused' : '';
+			alert('Thank you!');
+			setFormData(initialFormData);
+		}
 	};
 
 	return (
-		<>
-			<form onSubmit={'handleSubmit'}>
-				<div className='input input--text'>
-					<label htmlFor='name' className={getLabelClassName('name')}>
-						Your name
-					</label>
+		<form onSubmit={handleSubmit} className='contact-form'>
+			<div className='input-group'>
+				<input
+					type='text'
+					name='name'
+					placeholder={errors.name || 'Your Name'}
+					value={formData.name}
+					onChange={handleChange}
+					className={errors.name ? 'input-error' : ''}
+				/>
+				<input
+					type='email'
+					name='email'
+					placeholder={errors.email || 'Your Email'}
+					value={formData.email}
+					onChange={handleChange}
+					className={errors.email ? 'input-error' : ''}
+				/>
+			</div>
 
-					<input
-						type='text'
-						id='name'
-						name='name'
-						value={formData.name}
-						onChange={handleChange}
-						onFocus={handleFocus}
-						onBlur={handleBlur}
-						required
-						aria-describedby='nameError'
-					/>
-				</div>
-			</form>
-		</>
+			<div className='input-group'>
+				<input
+					type='text'
+					name='subject'
+					placeholder={errors.subject || 'Subject'}
+					value={formData.subject}
+					onChange={handleChange}
+					className={errors.subject ? 'input-error' : ''}
+				/>
+
+				<input
+					type='text'
+					name='message'
+					placeholder={errors.message || 'Your Message'}
+					value={formData.message}
+					onChange={handleChange}
+					className={errors.message ? 'input-error' : ''}
+				/>
+			</div>
+
+			<button type='submit' className='submit-button'>
+				Send Message {IconArrow}
+			</button>
+		</form>
 	);
 };
 
-export default Form;
+export default ContactForm;

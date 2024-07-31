@@ -1,0 +1,29 @@
+@import '../../styles/config';
+
+.footer {
+	color: $white;
+
+	&__logo {
+		svg path {
+			fill: $white;
+		}
+	}
+
+	&-container {
+		border-radius: 20px;
+		overflow: hidden;
+		background-color: $primary-color;
+		position: relative;
+		z-index: 1;
+	}
+
+	&__lines {
+		svg {
+			width: 100%;
+			position: absolute;
+			top: 0;
+			left: 0;
+			z-index: -1;
+		}
+	}
+}

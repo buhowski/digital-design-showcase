@@ -1,0 +1,21 @@
+.video-section {
+	margin-top: 100px;
+}
+
+.video {
+	border-radius: 20px;
+	overflow: hidden;
+	position: relative;
+
+	video {
+		border-radius: 20px;
+		width: 100%;
+	}
+}
+
+.mute-button {
+	position: absolute;
+	top: 30px;
+	right: 30px;
+	z-index: 5;
+}

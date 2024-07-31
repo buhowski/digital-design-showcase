@@ -1,7 +1,7 @@
 ## Project Structure
 
 ```scss
-repository/
+folders/
 ├── public/          // This directory contains static files (index.html, favicon, manifest.json, etc.) that will be served by the web server.
 ├── src/             // This directory contains the source code for the application.
 │   ├── assets/      // Global assets like fonts, icons, images, etc.

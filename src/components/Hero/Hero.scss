@@ -58,6 +58,19 @@
 }
 
 // Service Cards styles
+.cards-position {
+}
+
+.service-cards {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+	justify-content: center;
+	align-content: center;
+	gap: 20px 19px;
+
+	margin-top: -150px;
+}
+
 .service-card {
 	position: relative;
 	border-radius: 26.67px;

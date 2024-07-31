@@ -22,7 +22,7 @@ const Header = () => {
 					</nav>
 
 					<ScrollToSectionLink
-						href='#contacts'
+						href='#contact-us'
 						className={'main-btn'}
 						text='Contact Us'
 					/>

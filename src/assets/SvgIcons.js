@@ -257,27 +257,22 @@ export const IconHeroLines = (
 			<path
 				d='M940 1498C1183.46 1498 1380.83 1077.15 1380.83 558C1380.83 38.8523 1183.46 -382 940 -382C696.537 -382 499.172 38.8523 499.172 558C499.172 1077.15 696.537 1498 940 1498Z'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M940 1498C1459.15 1498 1880 1077.15 1880 558C1880 38.8523 1459.15 -382 940 -382C420.852 -382 0 38.8523 0 558C0 1077.15 420.852 1498 940 1498Z'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M939.996 1498V-382'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
-			<path
-				d='M0 557.997H1880'
-				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
-			/>
+			<path d='M0 557.997H1880' stroke='white' strokeWidth='2' strokeMiterlimit='10' />
 		</g>
 	</svg>
 );
@@ -294,27 +289,76 @@ export const IconVideoLines = (
 			<path
 				d='M900 1488C1143.46 1488 1340.83 1067.15 1340.83 548C1340.83 28.8523 1143.46 -392 900 -392C656.537 -392 459.172 28.8523 459.172 548C459.172 1067.15 656.537 1488 900 1488Z'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M900 1488C1419.15 1488 1840 1067.15 1840 548C1840 28.8523 1419.15 -392 900 -392C380.852 -392 -40 28.8523 -40 548C-40 1067.15 380.852 1488 900 1488Z'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M899.996 1488V-392'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
 			<path
 				d='M-40 547.998H1840'
 				stroke='white'
-				stroke-width='2'
-				stroke-miterlimit='10'
+				strokeWidth='2'
+				strokeMiterlimit='10'
 			/>
 		</g>
+	</svg>
+);
+
+export const IconFooterLines = (
+	<svg
+		width='1880'
+		height='834'
+		viewBox='0 0 1880 834'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<g opacity='0.1' clipPath='url(#clip0_2_2024)'>
+			<line
+				x1='940.6'
+				y1='-1348.68'
+				x2='940.601'
+				y2='2050.29'
+				stroke='white'
+				strokeWidth='1.07578'
+			/>
+			<line
+				x1='-2298.03'
+				y1='391.221'
+				x2='4178.15'
+				y2='391.221'
+				stroke='white'
+				strokeWidth='1.07578'
+			/>
+			<path
+				d='M1357.82 388.832C1357.82 623.822 1311.17 836.539 1235.78 990.489C1160.38 1144.47 1056.31 1239.5 941.527 1239.5C826.742 1239.5 722.673 1144.47 647.268 990.489C571.881 836.539 525.237 623.822 525.237 388.832C525.237 153.842 571.881 -58.8748 647.268 -212.824C722.673 -366.809 826.742 -461.835 941.527 -461.835C1056.31 -461.835 1160.38 -366.809 1235.78 -212.824C1311.17 -58.8748 1357.82 153.842 1357.82 388.832Z'
+				stroke='white'
+				strokeWidth='1.07578'
+			/>
+			<path
+				d='M1799.5 388.832C1799.5 878.042 1413.4 1274.6 937.136 1274.6C460.877 1274.6 74.7684 878.042 74.7684 388.832C74.7684 -100.378 460.877 -496.937 937.136 -496.937C1413.4 -496.937 1799.5 -100.378 1799.5 388.832Z'
+				stroke='white'
+				strokeWidth='1.07578'
+			/>
+		</g>
+		<defs>
+			<clipPath id='clip0_2_2024'>
+				<rect
+					width='2886.12'
+					height='1113'
+					fill='white'
+					transform='translate(-503 -139)'
+				/>
+			</clipPath>
+		</defs>
 	</svg>
 );

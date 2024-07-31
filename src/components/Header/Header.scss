@@ -1,7 +1,7 @@
 @import '../../styles/config';
 
 .header {
-	padding: 34px 0;
+	padding: 37px 0 34px;
 	width: 100%;
 	position: fixed;
 	top: 0;
@@ -19,6 +19,10 @@
 		// white-space: nowrap;
 		a:not(:last-child) {
 			margin-right: 98px;
+		}
+
+		a:hover {
+			color: $primary-hover;
 		}
 	}
 }
