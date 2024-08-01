@@ -46,6 +46,18 @@ const FooterAddress = ({ title, subtitle, address, suite, cityState, phone }) =>
 	);
 };
 
+const FooterList = ({ title, items, className }) => (
+	<ul className={className}>
+		<li className='ul-title'>{title}</li>
+
+		{items.map((item, index) => (
+			<li key={index}>
+				<a href={item.link}>{item.label}</a>
+			</li>
+		))}
+	</ul>
+);
+
 const Footer = () => {
 	const navItemsService = [
 		{ link: '#', label: 'Transportation' },
@@ -84,6 +96,18 @@ const Footer = () => {
 			phone: '713.975.8555',
 		},
 	];
+
+	const certificationsDBE = [
+		{ link: '##', label: 'Texas' },
+		{ link: '##', label: 'Florida' },
+		{ link: '##', label: 'Georgia' },
+		{ link: '##', label: 'New Mexico' },
+		{ link: '##', label: 'California' },
+		{ link: '##', label: 'Virginia' },
+		{ link: '##', label: 'Colorado' },
+	];
+
+	const certificationsSBE = [{ link: '##', label: 'Texas' }];
 
 	return (
 		<footer className='footer' id='contact-us'>
@@ -125,7 +149,35 @@ const Footer = () => {
 						</div>
 
 						<div className='footer-block'>
-							<div className='footer-nav'></div>
+							<div className='footer-offices'>
+								<div className=''>
+									<h3 className='ul-title'>International Offices</h3>
+
+									<p>
+										<a href='##'>
+											Sangineni Engineering and Technical Services (SEATS)
+										</a>
+										<span>– Hyderabad, India</span>
+									</p>
+
+									<p>
+										<a href='##'>Othon Enginero Consultares</a>
+										<span>– Santander, Spain</span>
+									</p>
+								</div>
+
+								<div className='footer-cert'>
+									<h3 className='ul-title'>Certifications</h3>
+
+									<FooterList
+										className='footer-list'
+										title='DBE:'
+										items={certificationsDBE}
+									/>
+
+									<FooterList title='SBE/MBE/HUB:' items={certificationsSBE} />
+								</div>
+							</div>
 
 							<div className='footer-policy'>
 								<p>

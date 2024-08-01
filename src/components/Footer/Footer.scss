@@ -4,6 +4,14 @@
 	color: $white;
 	font-size: 16px;
 
+	a {
+		color: rgba($white, 0.5);
+
+		&:hover {
+			color: rgba($white, 1);
+		}
+	}
+
 	&-logo {
 		width: 100%;
 		text-align: right;
@@ -44,6 +52,27 @@
 	}
 }
 
+.footer-list,
+.footer-cert {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+
+	.ul-title {
+		grid-column: span 2;
+	}
+}
+
+.footer-offices,
+.footer-policy {
+	display: grid;
+	grid-template-columns: repeat(3, 1fr);
+}
+
+.footer-cert,
+.footer-social {
+	grid-column: span 2;
+}
+
 .footer-row {
 	display: flex;
 }
@@ -53,8 +82,7 @@
 }
 
 .footer-nav,
-.footer-copy,
-.footer-policy {
+.footer-copy {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
 	gap: 16px;
