@@ -172,7 +172,9 @@ const Footer = () => {
 							<div className='footer-copy'>
 								<p>&copy;2024 OTHON, INC. All Rights Reserved.</p>
 
-								<a href='##'>Terms and Conditions</a>
+								<a href='##'>
+									<span>Terms and Conditions</span>
+								</a>
 							</div>
 						</div>
 
@@ -185,11 +187,13 @@ const Footer = () => {
 										<a href='##'>
 											Sangineni Engineering and Technical Services (SEATS)
 										</a>
+
 										<span>– Hyderabad, India</span>
 									</p>
 
 									<p>
 										<a href='##'>Othon Enginero Consultares</a>
+
 										<span>– Santander, Spain</span>
 									</p>
 								</div>
@@ -212,15 +216,18 @@ const Footer = () => {
 							</div>
 
 							<div className='footer-policy'>
-								<p>
-									Created with ♡ by{' '}
+								<p className='footer-policy__who'>
 									<a href='https://dd.nyc/' target='_blank' rel='noreferrer noopener'>
 										DD.NYC®
 									</a>
+
+									<span>Created with ♡ by</span>
 								</p>
 
 								<div className='footer-social'>
-									<a href='##'>Privacy Policy</a>
+									<a href='##'>
+										<span>Privacy Policy</span>
+									</a>
 
 									<FooterSocial items={socialData} />
 								</div>

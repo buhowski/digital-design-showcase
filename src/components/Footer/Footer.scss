@@ -10,6 +10,10 @@
 
 		&:hover {
 			color: rgba($white, 1);
+
+			~ span {
+				color: $white;
+			}
 		}
 	}
 
@@ -220,17 +224,46 @@ $marginLeft: 40px;
 	padding-left: 35px;
 }
 
-.footer-copy,
-.footer-policy {
-	font-size: 14px;
-}
-
 .footer-copy {
 	margin-top: 72px;
 }
 
 .footer-policy {
 	align-items: end;
+	color: rgba($white, 0.5);
+
+	&__who {
+		display: flex;
+		flex-direction: row-reverse;
+		justify-content: start;
+
+		a {
+			margin-left: 5px;
+		}
+	}
+}
+
+.footer-copy,
+.footer-policy {
+	font-size: 14px;
+
+	a {
+		color: $white;
+		display: inline;
+		position: relative;
+
+		span {
+			background-image: linear-gradient(currentColor, currentColor);
+			background-size: 0 1px;
+			background-repeat: no-repeat;
+			background-position: left bottom;
+			transition: background-size 0.3s;
+		}
+
+		&:hover span {
+			background-size: 100% 1px;
+		}
+	}
 }
 
 .footer-social {
