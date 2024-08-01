@@ -11,15 +11,18 @@ import './Hero.scss';
 
 const cardsData = [
 	{
-		title: 'Highways & Roads',
+		title: 'Highways & ',
+		span: 'Roads',
 		src: img,
 	},
 	{
-		title: 'Transportation Planning',
+		title: 'Transportation',
+		span: 'Planning',
 		src: img2,
 	},
 	{
-		title: 'Design Build Services',
+		title: 'Design',
+		span: 'Build Services',
 		src: img3,
 	},
 	{
@@ -31,7 +34,8 @@ const cardsData = [
 		src: img5,
 	},
 	{
-		title: 'Construction Services',
+		title: 'Construction',
+		span: 'Services',
 		src: img6,
 	},
 ];
@@ -55,10 +59,12 @@ const Hero = () => {
 				{/* Service Cards section */}
 				<div className='wrapper'>
 					<div className='service-cards'>
-						{cardsData.map(({ title, src }, index) => (
+						{cardsData.map(({ title, src, span }, index) => (
 							<a href='##' className='service-card' key={index}>
 								<div className='service-card__title'>
-									<h3 className='h3'>{title}</h3>
+									<h3 className='h3'>
+										{title} <span>{span}</span>
+									</h3>
 									{IconArrowEx}
 								</div>
 

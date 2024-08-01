@@ -1,10 +1,8 @@
 body {
 	font-family: $font-family;
 	background-color: $white;
-	color: $primary-color;
-
+	color: rgba($primary-color, 0.8);
 	font-size: 22px;
-	letter-spacing: 0.5%;
 
 	@include tablet {
 		font-size: 16px;
@@ -64,7 +62,7 @@ body {
 .h2 {
 	font-size: 34px;
 	line-height: 110%;
-	letter-spacing: -1%;
+	letter-spacing: -0.34px;
 
 	@include tablet {
 		font-size: 26px;
@@ -84,7 +82,7 @@ body {
 .title {
 	font-size: 24px;
 	line-height: 130%;
-	letter-spacing: 1%;
+	letter-spacing: 0.24px;
 	color: $primary-hover;
 	margin-top: 100px;
 	padding-top: 16px;
@@ -93,6 +91,10 @@ body {
 	@include tablet {
 		font-size: 20px;
 	}
+}
+
+.text {
+	letter-spacing: 0.11px;
 }
 
 .text-small {

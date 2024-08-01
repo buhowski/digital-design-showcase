@@ -114,7 +114,7 @@ const Footer = () => {
 			phone: '214.340.7344',
 		},
 		{
-			title: 'Houston',
+			title: 'Austin',
 			address: '9442 Capital of Texas Highway North',
 			suite: 'Plaza 1, Suite 500',
 			cityState: 'Austin, TX 78759',
@@ -146,7 +146,7 @@ const Footer = () => {
 						</a>
 					</div>
 
-					<div className='footer-row'>
+					<div className='footer-row footer-row--top'>
 						<nav className='footer-nav footer-block'>
 							<FooterNavList className='' items={navItemsService} title='Services' />
 
@@ -170,12 +170,13 @@ const Footer = () => {
 							</div>
 
 							<div className='footer-copy'>
-								<p>&copy; 2024 OTHON, INC. All Rights Reserved.</p>
+								<p>&copy;2024 OTHON, INC. All Rights Reserved.</p>
+
 								<a href='##'>Terms and Conditions</a>
 							</div>
 						</div>
 
-						<div className='footer-block'>
+						<div className='footer-block footer-block--right'>
 							<div className='footer-offices'>
 								<div className='footer-international'>
 									<h3 className='ul-title'>International Offices</h3>

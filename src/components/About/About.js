@@ -27,7 +27,7 @@ const About = () => {
 							<div key={index} className='about-item'>
 								<div className={`about-item__content about-item__content-${index}`}>
 									<h3 className='h2'>{section.title}</h3>
-									<p>{section.text}</p>
+									<p className='text'>{section.text}</p>
 								</div>
 							</div>
 						))}
