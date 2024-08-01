@@ -203,7 +203,11 @@ const Footer = () => {
 										items={certificationsDBE}
 									/>
 
-									<FooterList title='SBE/MBE/HUB:' items={certificationsSBE} />
+									<FooterList
+										title='SBE/MBE/HUB:'
+										className='footer-list-sbe'
+										items={certificationsSBE}
+									/>
 								</div>
 							</div>
 
