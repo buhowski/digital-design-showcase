@@ -7,6 +7,7 @@
 
 	@include tablet {
 		padding-bottom: 0;
+		font-size: 14px;
 	}
 
 	.container {
@@ -29,10 +30,19 @@
 
 	&-logo {
 		width: 100%;
-		text-align: right;
+		justify-content: flex-end;
+		display: flex;
+
+		@include respond-to(850px) {
+			justify-content: space-between;
+		}
 	}
 
 	&__logo {
+		@include respond-to(850px) {
+			width: 137px;
+		}
+
 		svg path {
 			fill: $white;
 		}
@@ -41,9 +51,17 @@
 	.ul-title {
 		font-size: 20px;
 
+		@include respond-to(850px) {
+			font-size: 18px;
+		}
+
 		span {
 			font-size: 16px;
 			display: block;
+
+			@include respond-to(850px) {
+				font-size: 14px;
+			}
 		}
 	}
 
@@ -57,13 +75,16 @@
 
 		@include tablet {
 			border-radius: 13px 13px 0 0;
+			padding: 35px 20px;
 		}
 	}
 
 	&__lines {
 		svg {
-			width: 100%;
+			width: auto;
 			height: 100%;
+			object-fit: cover;
+			max-width: none;
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -77,8 +98,20 @@
 	display: flex;
 	justify-content: space-between;
 
+	@include respond-to(850px) {
+		flex-direction: column;
+	}
+
 	&--top {
 		align-items: baseline;
+		margin-top: -36px;
+		margin-bottom: 86px;
+
+		@include respond-to(850px) {
+			margin-top: 79px;
+			margin-bottom: 0;
+			flex-direction: column-reverse;
+		}
 	}
 }
 
@@ -86,6 +119,15 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
+	margin-top: 50px;
+
+	@include respond-to(1280px) {
+		width: 100%;
+	}
+
+	@include respond-to(850px) {
+		margin-top: 0;
+	}
 
 	&--right {
 		max-width: 721px;
@@ -98,20 +140,50 @@
 .footer-address {
 	display: grid;
 	grid-template-columns: repeat(3, 1fr);
+	row-gap: 70px;
+}
+
+.footer-nav,
+.footer-address {
+	@include respond-to(1500px) {
+		grid-template-columns: repeat(2, 1fr);
+	}
 }
 
 .footer-address {
+	@include respond-to(850px) {
+		gap: 40px 20px;
+		margin-top: 80px;
+	}
+
 	.ul-title {
 		min-height: 50px;
 		margin-bottom: 15px;
+
+		@include respond-to(850px) {
+			min-height: 42px;
+		}
+	}
+
+	.address-phone {
+		margin-top: 27px;
+
+		@include respond-to(850px) {
+			font-size: 16px;
+			margin-top: 14px;
+		}
 	}
 
 	p {
-		color: rgba($white, 0.8);
 		max-width: 183px;
 
-		&:not(:last-child) {
-			margin-bottom: 27px;
+		&:not(.address-phone) {
+			color: rgba($white, 0.8);
+
+			@include respond-to(850px) {
+				color: rgba($white, 0.5);
+				line-height: 115%;
+			}
 		}
 
 		span {
@@ -132,6 +204,11 @@
 
 .footer-list {
 	column-gap: 20px;
+	white-space: nowrap;
+
+	@include respond-to(1280px) {
+		display: block;
+	}
 }
 
 .footer-offices,
@@ -139,6 +216,18 @@
 	display: grid;
 	grid-template-columns: minmax(0, 212px) 1fr;
 	gap: 104px;
+
+	@include respond-to(1280px) {
+		grid-template-columns: 1fr;
+		gap: 70px;
+	}
+}
+
+.footer-offices {
+	@include respond-to(850px) {
+		margin-top: 76px;
+		gap: 34px;
+	}
 }
 
 .footer-copy p {
@@ -146,58 +235,100 @@
 }
 
 // All footer styles
-$marginLeft: 40px;
-
-.footer-copy a {
-	margin-left: $marginLeft;
-}
-
 .footer-nav,
 .footer-address {
 	> * {
 		min-width: 188px;
 
+		@include respond-to(850px) {
+			min-width: auto;
+		}
+
 		&:first-child {
 			margin-right: 86px;
-		}
-	}
 
-	> *:last-child {
-		margin-left: $marginLeft;
+			@include respond-to(1700px) {
+				margin-right: 20px;
+			}
+
+			@include respond-to(850px) {
+				margin-right: 0;
+			}
+		}
 	}
 }
 
 .footer-nav {
-	margin-top: 25px;
+	margin-top: 67px;
 
-	&.disabled {
-		display: none;
+	@include respond-to(850px) {
+		margin-top: 63px;
+		gap: 0;
 	}
 
 	.ul-title {
 		margin-bottom: 38px;
+
+		@include respond-to(850px) {
+			margin-bottom: 14px;
+		}
 	}
 
 	li {
 		&:not(.ul-title):not(:last-child) {
 			margin-bottom: 11px;
+
+			@include respond-to(850px) {
+				margin-bottom: 8px;
+			}
 		}
+	}
+}
+
+.about-list {
+	order: 0;
+}
+
+.service-list {
+	order: 1;
+}
+
+.company-list {
+	order: 2;
+}
+
+.footer-nav ~ .footer-form {
+	margin-top: 50px;
+
+	@include respond-to(850px) {
+		margin-top: 0;
 	}
 }
 
 .footer-form {
 	max-width: 725px;
 	width: 100%;
-	margin-bottom: 137px;
 
 	.h2 {
 		margin-bottom: 30px;
+
+		@include tablet {
+			margin-bottom: 23px;
+		}
 	}
 }
 
 .footer-international {
+	@include respond-to(850px) {
+		line-height: 115%;
+	}
+
 	> .ul-title {
 		margin-bottom: 44px;
+
+		@include respond-to(850px) {
+			margin-bottom: 17px;
+		}
 	}
 }
 
@@ -206,10 +337,18 @@ $marginLeft: 40px;
 
 	> .ul-title {
 		margin-bottom: 44px;
+
+		@include respond-to(850px) {
+			margin-bottom: 14px;
+		}
 	}
 
 	ul {
 		line-height: 140%;
+
+		@include respond-to(850px) {
+			line-height: 115%;
+		}
 
 		li {
 			margin-bottom: 4px;
@@ -218,28 +357,77 @@ $marginLeft: 40px;
 		.ul-title {
 			font-size: 16px;
 			margin-bottom: 10px;
+			text-transform: uppercase;
+
+			@include respond-to(850px) {
+				font-size: 14px;
+				margin-bottom: 12px;
+			}
 		}
 	}
 }
 
 .footer-international {
+	@include respond-to(850px) {
+		max-width: 212px;
+	}
+
 	p {
 		&:not(:last-child) {
 			margin-bottom: 21px;
+
+			@include respond-to(850px) {
+				margin-bottom: 27px;
+			}
+		}
+
+		a::after {
+			content: '–';
+			display: none;
+			margin-left: 5px;
+
+			@include respond-to(850px) {
+				display: inline-block;
+			}
 		}
 
 		span {
 			display: block;
+
+			&::before {
+				content: '–';
+				display: inline;
+				margin-right: 5px;
+
+				@include respond-to(850px) {
+					display: none;
+				}
+			}
 		}
 	}
 }
 
 .footer-list-sbe {
 	padding-left: 35px;
+
+	@include respond-to(850px) {
+		padding-left: 0;
+	}
 }
 
 .footer-copy {
 	margin-top: 72px;
+
+	@include respond-to(1280px) {
+		display: flex;
+		flex-direction: column-reverse;
+		gap: 5px;
+	}
+
+	@include respond-to(850px) {
+		margin-top: 61px;
+		color: $white;
+	}
 }
 
 .footer-policy {
@@ -250,6 +438,7 @@ $marginLeft: 40px;
 		display: flex;
 		flex-direction: row-reverse;
 		justify-content: start;
+		align-items: baseline;
 
 		a {
 			margin-left: 5px;
@@ -265,6 +454,7 @@ $marginLeft: 40px;
 		color: $white;
 		display: inline;
 		position: relative;
+		width: max-content;
 
 		span {
 			background-image: linear-gradient(currentColor, currentColor);
@@ -285,18 +475,36 @@ $marginLeft: 40px;
 	align-items: flex-end;
 	justify-content: space-between;
 
-	ul {
-		display: flex;
-		gap: 22px;
-		margin-left: 30px;
+	@include respond-to(850px) {
+		flex-direction: column;
+		align-items: flex-start;
 	}
 
-	a {
-		display: block;
+	&__links {
+		display: flex;
+		align-items: center;
+		gap: 22px;
+		margin-left: 30px;
 
-		&:hover {
-			svg path {
-				fill: $primary-hover;
+		@include respond-to(850px) {
+			gap: 11px;
+
+			li {
+				width: 21px;
+				display: flex;
+				height: auto;
+			}
+		}
+
+		a {
+			svg {
+				height: auto;
+			}
+
+			&:hover {
+				svg path {
+					fill: $primary-hover;
+				}
 			}
 		}
 	}

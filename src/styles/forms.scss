@@ -10,13 +10,32 @@ form {
 		border-radius: 12px;
 		color: rgba($primary-color, 0.6);
 		background-color: $white;
+
+		@include tablet {
+			height: 46px;
+		}
+	}
+}
+
+.input-groups {
+	display: flex;
+	gap: 14px;
+
+	@include respond-to(850px) {
+		flex-direction: column;
+		gap: 0;
 	}
 }
 
 .input-group {
-	display: flex;
-	gap: 14px;
-	margin-bottom: 19px;
+	input {
+		margin-bottom: 14px;
+
+		@include respond-to(850px) {
+			margin-bottom: 13px;
+			font-size: 14px;
+		}
+	}
 }
 
 .input-error {
@@ -29,10 +48,15 @@ form {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	padding: 9px 20px 10px;
+	padding: 11px 20px 12px;
 	width: 100%;
-	margin-top: 26px;
+	margin-top: 12px;
 	font-size: 20px;
+
+	@include respond-to(850px) {
+		margin-top: 17px;
+		font-size: 18px;
+	}
 
 	&:hover {
 		background-color: $white;

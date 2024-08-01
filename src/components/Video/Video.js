@@ -1,5 +1,6 @@
-import React, { useRef, useState } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import videoSrc from '../../assets/media/test.mp4';
+import videoPoster from '../../assets/media/about.jpg';
 import {
 	IconSoundOn,
 	IconSoundOff,
@@ -14,6 +15,7 @@ import './Video.scss';
 const Video = () => {
 	const isMobile = useMobileQuery();
 
+	const sectionRef = useRef(null);
 	const videoRef = useRef(null);
 	const [isMuted, setIsMuted] = useState(true);
 
@@ -24,15 +26,47 @@ const Video = () => {
 		}
 	};
 
+	useEffect(() => {
+		const observerOptions = {
+			root: null,
+			rootMargin: '0px',
+			threshold: 0.5,
+		};
+
+		const observerCallback = (entries) => {
+			entries.forEach((entry) => {
+				if (entry.isIntersecting) {
+					if (videoRef.current) {
+						videoRef.current.play();
+					}
+				}
+			});
+		};
+
+		const observer = new IntersectionObserver(observerCallback, observerOptions);
+		const currentSectionRef = sectionRef.current;
+
+		if (currentSectionRef) {
+			observer.observe(currentSectionRef);
+		}
+
+		return () => {
+			if (currentSectionRef) {
+				observer.unobserve(currentSectionRef);
+			}
+		};
+	}, []);
+
 	return (
-		<section className='video-section'>
+		<section className='video-section' ref={sectionRef}>
 			<div className='container'>
 				<div className='wrapper'>
 					<div className='video'>
 						<video
 							ref={videoRef}
 							src={videoSrc}
-							autoPlay
+							poster={videoPoster}
+							// autoPlay
 							loop
 							muted
 							playsInline

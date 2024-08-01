@@ -1,6 +1,6 @@
 // ### reusable structure components / HTML tags
 
-export const ScrollToSectionLink = ({ href, className, text }) => {
+export const ScrollToSectionLink = ({ href, className, text, disabled }) => {
 	const handleClick = (e) => {
 		e.preventDefault();
 		const target = document.querySelector(href);
@@ -13,7 +13,7 @@ export const ScrollToSectionLink = ({ href, className, text }) => {
 	};
 
 	return (
-		<a href={href} className={className} onClick={handleClick}>
+		<a href={href} className={className} onClick={handleClick} data-disabled={disabled}>
 			{text}
 		</a>
 	);

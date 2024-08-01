@@ -38,50 +38,53 @@ const ContactForm = () => {
 			// Perform form submission actions here
 			console.log('Form submitted:', formData);
 
-			alert('Thank you!');
+			alert(`Thank you! One of our managers will contact you soon.`);
 			setFormData(initialFormData);
 		}
 	};
 
 	return (
 		<form onSubmit={handleSubmit} className='contact-form'>
-			<div className='input-group'>
-				<input
-					type='text'
-					name='name'
-					placeholder={errors.name || 'Your Name'}
-					value={formData.name}
-					onChange={handleChange}
-					className={errors.name ? 'input-error' : ''}
-				/>
-				<input
-					type='email'
-					name='email'
-					placeholder={errors.email || 'Your Email'}
-					value={formData.email}
-					onChange={handleChange}
-					className={errors.email ? 'input-error' : ''}
-				/>
-			</div>
+			<div className='input-groups'>
+				<div className='input-group'>
+					<input
+						type='text'
+						name='name'
+						placeholder={errors.name || 'Your Name'}
+						value={formData.name}
+						onChange={handleChange}
+						className={errors.name ? 'input-error' : ''}
+					/>
 
-			<div className='input-group'>
-				<input
-					type='text'
-					name='subject'
-					placeholder={errors.subject || 'Subject'}
-					value={formData.subject}
-					onChange={handleChange}
-					className={errors.subject ? 'input-error' : ''}
-				/>
+					<input
+						type='text'
+						name='subject'
+						placeholder={errors.subject || 'Subject'}
+						value={formData.subject}
+						onChange={handleChange}
+						className={errors.subject ? 'input-error' : ''}
+					/>
+				</div>
 
-				<input
-					type='text'
-					name='message'
-					placeholder={errors.message || 'Your Message'}
-					value={formData.message}
-					onChange={handleChange}
-					className={errors.message ? 'input-error' : ''}
-				/>
+				<div className='input-group'>
+					<input
+						type='email'
+						name='email'
+						placeholder={errors.email || 'Your Email'}
+						value={formData.email}
+						onChange={handleChange}
+						className={errors.email ? 'input-error' : ''}
+					/>
+
+					<input
+						type='text'
+						name='message'
+						placeholder={errors.message || 'Your Message'}
+						value={formData.message}
+						onChange={handleChange}
+						className={errors.message ? 'input-error' : ''}
+					/>
+				</div>
 			</div>
 
 			<button type='submit' className='submit-button'>

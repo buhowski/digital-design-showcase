@@ -65,8 +65,8 @@ const Header = () => {
 					<nav className='header-nav'>
 						<ScrollToSectionLink href='#home' text='Home' />
 						<ScrollToSectionLink href='#about' text='About' />
-						<ScrollToSectionLink href='#services' text='Services' />
-						<ScrollToSectionLink href='#careers' text='Careers' />
+						<ScrollToSectionLink href='#services' text='Services' disabled />
+						<ScrollToSectionLink href='#careers' text='Careers' disabled />
 
 						{isTablet && (
 							<>

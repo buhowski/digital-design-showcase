@@ -61,6 +61,10 @@
 
 	&-nav {
 		a {
+			&[data-disabled] {
+				cursor: default;
+			}
+
 			&:not(:last-child) {
 				margin-right: 98px;
 
@@ -68,7 +72,7 @@
 					margin-right: 0;
 
 					&:not(.main-btn) {
-						margin-bottom: 20px;
+						margin-bottom: 13px;
 					}
 				}
 			}
@@ -87,7 +91,7 @@
 			left: 0;
 			display: flex;
 			flex-direction: column;
-			padding: 140px 20px 57px;
+			padding: 134px 20px 57px;
 			color: $white;
 			transition: 0.3s cubic-bezier(0.77, 0, 0.175, 1);
 			z-index: 1;

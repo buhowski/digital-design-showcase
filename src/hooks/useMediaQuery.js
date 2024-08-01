@@ -27,7 +27,7 @@ const useTabletQuery = () => {
 };
 
 const useMobileQuery = () => {
-	return useMediaQuery('768', 'width');
+	return useMediaQuery('850', 'width');
 };
 
 export { useTabletQuery, useMobileQuery };

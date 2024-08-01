@@ -11,6 +11,8 @@ import {
 	IconIn,
 } from '../../assets/SvgIcons';
 
+import { useMobileQuery } from '../../hooks/useMediaQuery';
+
 import './Footer.scss';
 
 // Reusable Footer Componets
@@ -27,7 +29,7 @@ const FooterNavList = ({ items, title, className }) => (
 );
 
 const FooterSocial = ({ items }) => (
-	<ul>
+	<ul className='footer-social__links'>
 		{items.map((item, index) => (
 			<li key={index}>
 				<a href={item.url}>{item.icon}</a>
@@ -50,7 +52,7 @@ const FooterAddress = ({ title, subtitle, address, suite, cityState, phone }) =>
 				{cityState}
 			</p>
 
-			<p>P: {phone}</p>
+			<p className='address-phone'>P: {phone}</p>
 		</div>
 	);
 };
@@ -67,7 +69,25 @@ const FooterList = ({ title, items, className }) => (
 	</ul>
 );
 
+const FooterCopy = ({ mobile }) => (
+	<div className='footer-copy'>
+		<p>&copy;2024 OTHON, INC. All Rights Reserved.</p>
+
+		{mobile && (
+			<a href='##'>
+				<span>Privacy Policy</span>
+			</a>
+		)}
+
+		<a href='##'>
+			<span>Terms and Conditions</span>
+		</a>
+	</div>
+);
+
 const Footer = () => {
+	const isMobile = useMobileQuery();
+
 	// Footer DATA
 	const navItemsService = [
 		{ link: '#', label: 'Transportation' },
@@ -144,15 +164,29 @@ const Footer = () => {
 						<a href='/' className='footer__logo'>
 							{Logo}
 						</a>
+
+						{isMobile && <FooterSocial items={socialData} />}
 					</div>
 
 					<div className='footer-row footer-row--top'>
 						<nav className='footer-nav footer-block'>
-							<FooterNavList className='' items={navItemsService} title='Services' />
+							<FooterNavList
+								className='service-list'
+								items={navItemsService}
+								title='Services'
+							/>
 
-							<FooterNavList className='' items={navItemsAbout} title='About' />
+							<FooterNavList
+								className='about-list'
+								items={navItemsAbout}
+								title='About'
+							/>
 
-							<FooterNavList className='' items={navItemsCompany} title='Company' />
+							<FooterNavList
+								className='company-list'
+								items={navItemsCompany}
+								title='Company'
+							/>
 						</nav>
 
 						<div className='footer-form footer-block'>
@@ -169,13 +203,7 @@ const Footer = () => {
 								))}
 							</div>
 
-							<div className='footer-copy'>
-								<p>&copy;2024 OTHON, INC. All Rights Reserved.</p>
-
-								<a href='##'>
-									<span>Terms and Conditions</span>
-								</a>
-							</div>
+							{!isMobile && <FooterCopy />}
 						</div>
 
 						<div className='footer-block footer-block--right'>
@@ -188,13 +216,13 @@ const Footer = () => {
 											Sangineni Engineering and Technical Services (SEATS)
 										</a>
 
-										<span>– Hyderabad, India</span>
+										<span>Hyderabad, India</span>
 									</p>
 
 									<p>
 										<a href='##'>Othon Enginero Consultares</a>
 
-										<span>– Santander, Spain</span>
+										<span>Santander, Spain</span>
 									</p>
 								</div>
 
@@ -216,20 +244,28 @@ const Footer = () => {
 							</div>
 
 							<div className='footer-policy'>
-								<p className='footer-policy__who'>
-									<a href='https://dd.nyc/' target='_blank' rel='noreferrer noopener'>
-										DD.NYC®
-									</a>
+								{!isMobile && (
+									<p className='footer-policy__who'>
+										<a href='https://dd.nyc/' target='_blank' rel='noreferrer noopener'>
+											DD.NYC®
+										</a>
 
-									<span>Created with ♡ by</span>
-								</p>
+										<span>Created with ♡ by</span>
+									</p>
+								)}
 
 								<div className='footer-social'>
-									<a href='##'>
-										<span>Privacy Policy</span>
-									</a>
+									{isMobile && <FooterCopy mobile={true} />}
 
-									<FooterSocial items={socialData} />
+									{!isMobile && (
+										<>
+											<a href='##'>
+												<span>Privacy Policy</span>
+											</a>
+
+											<FooterSocial items={socialData} />
+										</>
+									)}
 								</div>
 							</div>
 						</div>
