@@ -1,6 +1,6 @@
 import React, { useRef, useState } from 'react';
 import videoSrc from '../../assets/media/test.mp4';
-import { IconSoundOn, IconSoundOff } from '../../assets/SvgIcons';
+import { IconSoundOn, IconSoundOff, IconVideoLines } from '../../assets/SvgIcons';
 import './Video.scss';
 
 const Video = () => {
@@ -28,6 +28,8 @@ const Video = () => {
 							playsInline
 							className='video-player'
 						></video>
+
+						<span className='bg-svg'>{IconVideoLines}</span>
 
 						<button className='mute-button' onClick={toggleMute}>
 							{isMuted ? IconSoundOff : IconSoundOn}
