@@ -3,6 +3,7 @@ body {
 	background-color: $white;
 	color: rgba($primary-color, 0.8);
 	font-size: 22px;
+	scrollbar-gutter: stable;
 
 	@include tablet {
 		font-size: 16px;
@@ -11,6 +12,10 @@ body {
 
 .page {
 	padding-top: 133px;
+
+	@include tablet {
+		padding-top: 82px;
+	}
 }
 
 // Container / wrapper
@@ -22,6 +27,10 @@ body {
 
 .wrapper {
 	padding: 0 40px;
+
+	@include tablet {
+		padding: 0;
+	}
 }
 
 // Buttons Style
@@ -35,6 +44,12 @@ body {
 	font-size: 20px;
 	color: $white;
 	background-color: $primary-color;
+
+	@include tablet {
+		font-size: 18px;
+		padding: 11px 30px 12px;
+		width: 100%;
+	}
 
 	&:hover {
 		background-color: $white;
@@ -90,6 +105,7 @@ body {
 
 	@include tablet {
 		font-size: 20px;
+		margin-top: 70px;
 	}
 }
 

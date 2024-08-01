@@ -5,6 +5,16 @@
 	font-size: 16px;
 	padding-bottom: 20px;
 
+	@include tablet {
+		padding-bottom: 0;
+	}
+
+	.container {
+		@include tablet {
+			padding: 0;
+		}
+	}
+
 	a {
 		color: rgba($white, 0.5);
 
@@ -44,6 +54,10 @@
 		background-color: $primary-color;
 		position: relative;
 		z-index: 1;
+
+		@include tablet {
+			border-radius: 13px 13px 0 0;
+		}
 	}
 
 	&__lines {

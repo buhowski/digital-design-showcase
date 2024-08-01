@@ -1,9 +1,19 @@
 import React, { useRef, useState } from 'react';
 import videoSrc from '../../assets/media/test.mp4';
-import { IconSoundOn, IconSoundOff, IconVideoLines } from '../../assets/SvgIcons';
+import {
+	IconSoundOn,
+	IconSoundOff,
+	IconVideoLines,
+	IconVideoLinesMob,
+} from '../../assets/SvgIcons';
+
+import { useMobileQuery } from '../../hooks/useMediaQuery';
+
 import './Video.scss';
 
 const Video = () => {
+	const isMobile = useMobileQuery();
+
 	const videoRef = useRef(null);
 	const [isMuted, setIsMuted] = useState(true);
 
@@ -29,7 +39,9 @@ const Video = () => {
 							className='video-player'
 						></video>
 
-						<span className='bg-svg'>{IconVideoLines}</span>
+						<span className='bg-svg'>
+							{isMobile ? IconVideoLinesMob : IconVideoLines}
+						</span>
 
 						<button className='mute-button' onClick={toggleMute}>
 							{isMuted ? IconSoundOff : IconSoundOn}

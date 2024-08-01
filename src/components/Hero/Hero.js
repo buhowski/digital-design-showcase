@@ -1,11 +1,14 @@
 import heroImg from '../../assets/media/hero.jpg';
-import { IconHeroLines, IconArrowEx } from '../../assets/SvgIcons';
+import mobheroImg from '../../assets/media/mob-hero.jpg';
+import { IconHeroLines, IconArrowEx, IconHeroLinesMob } from '../../assets/SvgIcons';
 import img from '../../assets/media/1.jpg';
 import img2 from '../../assets/media/2.jpg';
 import img3 from '../../assets/media/3.jpg';
 import img4 from '../../assets/media/4.jpg';
 import img5 from '../../assets/media/5.jpg';
 import img6 from '../../assets/media/6.jpg';
+
+import { useMobileQuery } from '../../hooks/useMediaQuery';
 
 import './Hero.scss';
 
@@ -41,14 +44,29 @@ const cardsData = [
 ];
 
 const Hero = () => {
+	const isMobile = useMobileQuery();
+
 	return (
 		<section className='hero'>
 			<div className='container'>
 				<div className='hero-section'>
 					<div className='hero-section__img'>
-						<img src={heroImg} alt='hero' />
+						<picture>
+							{/* Mobile variant */}
+							<source
+								srcSet={mobheroImg}
+								media='(max-width: 767px)'
+								type='image/jpeg'
+							/>
 
-						{IconHeroLines}
+							{/* Default variant */}
+							<source srcSet={heroImg} media='(min-width: 768px)' type='image/jpeg' />
+
+							{/* Fallback for browsers that don't support <picture> */}
+							<img src={heroImg} alt='hero' />
+						</picture>
+
+						{isMobile ? IconHeroLinesMob : IconHeroLines}
 					</div>
 
 					<div className='hero-section__title'>

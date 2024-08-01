@@ -13,11 +13,21 @@
 		align-items: center;
 		z-index: 1;
 
+		@include mobile {
+			border-radius: 13px;
+			height: 554px;
+			align-items: flex-end;
+			justify-content: flex-start;
+		}
+
 		&__title {
-			display: flex;
-			align-items: center;
-			justify-content: center;
 			margin-bottom: 76px;
+
+			@include mobile {
+				margin-left: 22px;
+				margin-bottom: 30px;
+				max-width: 320px;
+			}
 		}
 
 		&__img {
@@ -27,12 +37,14 @@
 			height: 100%;
 
 			img,
+			picture,
 			svg {
 				width: 100%;
 				height: 100%;
 			}
 
-			img {
+			img,
+			picture {
 				object-fit: cover;
 			}
 
@@ -48,7 +60,7 @@
 				display: block;
 				width: 100%;
 				height: 100%;
-				background-color: rgba(#171717, $alpha: 0.3);
+				background-color: rgba(#171717, 0.3);
 				position: absolute;
 				top: 0;
 				left: 0;
@@ -66,8 +78,17 @@
 	justify-content: center;
 	align-content: center;
 	gap: 20px 19px;
-
 	margin-top: -150px;
+
+	@include tablet {
+		grid-template-columns: repeat(2, 1fr);
+		margin-top: 20px;
+	}
+
+	@include mobile {
+		grid-template-columns: repeat(1, 1fr);
+		gap: 11px;
+	}
 }
 
 .service-card {
@@ -78,6 +99,12 @@
 	height: 280px;
 	z-index: 1;
 
+	@include mobile {
+		border-radius: 13px;
+		height: 160px;
+		padding: 19px;
+	}
+
 	&::after,
 	svg,
 	img {
@@ -86,6 +113,11 @@
 
 	svg {
 		margin-top: 6px;
+
+		@include mobile {
+			width: 13px;
+			margin-top: 0;
+		}
 	}
 
 	&__title {
@@ -119,6 +151,12 @@
 		top: 0;
 		left: 0;
 		background-color: $primary-color;
+	}
+
+	&::after {
+		@include mobile {
+			background: linear-gradient(180deg, #18306c 0%, rgba(47, 93, 210, 0) 100%);
+		}
 	}
 
 	&::before {

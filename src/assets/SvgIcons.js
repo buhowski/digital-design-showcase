@@ -1,3 +1,69 @@
+export const MobMenuLines = (
+	<svg
+		width='375'
+		height='635'
+		viewBox='0 0 375 635'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<g opacity='0.1'>
+			<path
+				d='M395.212 774.838C511.452 774.838 605.684 568.541 605.684 314.061C605.684 59.5817 511.452 -146.715 395.212 -146.715C278.972 -146.715 184.74 59.5817 184.74 314.061C184.74 568.541 278.972 774.838 395.212 774.838Z'
+				stroke='white'
+				strokeMiterlimit='10'
+			/>
+			<path
+				d='M395.212 774.838C643.077 774.838 844.012 568.541 844.012 314.061C844.012 59.5817 643.077 -146.715 395.212 -146.715C147.347 -146.715 -53.5879 59.5817 -53.5879 314.061C-53.5879 568.541 147.347 774.838 395.212 774.838Z'
+				stroke='white'
+				strokeMiterlimit='10'
+			/>
+			<path d='M-53.5879 314.061H844.012' stroke='white' strokeMiterlimit='10' />
+		</g>
+	</svg>
+);
+
+export const CloseMenuIcon = (
+	<svg
+		width='8'
+		height='9'
+		viewBox='0 0 8 9'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<rect
+			x='0.818359'
+			y='0.61084'
+			width='10'
+			height='1'
+			rx='0.5'
+			transform='rotate(45 0.818359 0.61084)'
+			fill='white'
+		/>
+		<rect
+			x='0.111328'
+			y='7.68213'
+			width='10'
+			height='1'
+			rx='0.5'
+			transform='rotate(-45 0.111328 7.68213)'
+			fill='white'
+		/>
+	</svg>
+);
+export const MobileMenuIcon = (
+	<svg
+		width='10'
+		height='9'
+		viewBox='0 0 10 9'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<rect y='4' width='10' height='1' rx='0.5' fill='white' />
+		<rect width='10' height='1' rx='0.5' fill='white' />
+		<rect y='8' width='10' height='1' rx='0.5' fill='white' />
+	</svg>
+);
+
 export const Logo = (
 	<svg
 		width='200'
@@ -245,6 +311,30 @@ export const IconSoundOff = (
 	</svg>
 );
 
+export const IconHeroLinesMob = (
+	<svg
+		width='335'
+		height='554'
+		viewBox='0 0 335 554'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<g opacity='0.3'>
+			<path
+				d='M354.001 676C458.12 676 542.525 496.018 542.525 274C542.525 51.9815 458.12 -128 354.001 -128C249.882 -128 165.477 51.9815 165.477 274C165.477 496.018 249.882 676 354.001 676Z'
+				stroke='white'
+				strokeMiterlimit='10'
+			/>
+			<path
+				d='M354 676C576.018 676 756 496.018 756 274C756 51.9815 576.018 -128 354 -128C131.982 -128 -48 51.9815 -48 274C-48 496.018 131.982 676 354 676Z'
+				stroke='white'
+				strokeMiterlimit='10'
+			/>
+			<path d='M-48 274H756' stroke='white' strokeMiterlimit='10' />
+		</g>
+	</svg>
+);
+
 export const IconHeroLines = (
 	<svg
 		width='1880'
@@ -273,6 +363,30 @@ export const IconHeroLines = (
 				strokeMiterlimit='10'
 			/>
 			<path d='M0 557.997H1880' stroke='white' strokeWidth='2' strokeMiterlimit='10' />
+		</g>
+	</svg>
+);
+
+export const IconVideoLinesMob = (
+	<svg
+		width='339'
+		height='480'
+		viewBox='0 0 339 480'
+		fill='none'
+		xmlns='http://www.w3.org/2000/svg'
+	>
+		<g opacity='0.3'>
+			<path
+				d='M436.033 870.066C548.708 870.066 640.049 675.295 640.049 435.033C640.049 194.771 548.708 0 436.033 0C323.358 0 232.018 194.771 232.018 435.033C232.018 675.295 323.358 870.066 436.033 870.066Z'
+				stroke='white'
+				strokeMiterlimit='10'
+			/>
+			<path
+				d='M436.033 870.066C676.295 870.066 871.066 675.295 871.066 435.033C871.066 194.771 676.295 0 436.033 0C195.771 0 1 194.771 1 435.033C1 675.295 195.771 870.066 436.033 870.066Z'
+				stroke='white'
+				strokeMiterlimit='10'
+			/>
+			<path d='M1 435.032H871.066' stroke='white' strokeMiterlimit='10' />
 		</g>
 	</svg>
 );

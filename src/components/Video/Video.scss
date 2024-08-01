@@ -3,6 +3,17 @@
 .video-section {
 	margin-top: 100px;
 	margin-bottom: 100px;
+
+	@include mobile {
+		margin-bottom: 70px;
+		margin-top: 70px;
+	}
+
+	.container {
+		@include mobile {
+			padding: 0;
+		}
+	}
 }
 
 .video {
@@ -10,6 +21,11 @@
 	overflow: hidden;
 	position: relative;
 	z-index: 1;
+
+	@include mobile {
+		height: 480px;
+		border-radius: 0;
+	}
 
 	.bg-svg {
 		svg {
@@ -37,6 +53,12 @@
 	video {
 		border-radius: 20px;
 		width: 100%;
+
+		@include mobile {
+			border-radius: 0;
+			height: 100%;
+			object-fit: cover;
+		}
 	}
 }
 
