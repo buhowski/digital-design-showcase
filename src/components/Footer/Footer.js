@@ -1,10 +1,19 @@
 import React from 'react';
 
 import Form from '../Form';
-import { Logo, IconFooterLines, IconFb, IconIg } from '../../assets/SvgIcons';
+import {
+	Logo,
+	IconFooterLines,
+	IconFb,
+	IconIg,
+	IconYt,
+	IconTwi,
+	IconIn,
+} from '../../assets/SvgIcons';
 
 import './Footer.scss';
 
+// Reusable Footer Componets
 const FooterNavList = ({ items, title, className }) => (
 	<ul className={className}>
 		<li className='ul-title'>{title}</li>
@@ -29,7 +38,7 @@ const FooterSocial = ({ items }) => (
 
 const FooterAddress = ({ title, subtitle, address, suite, cityState, phone }) => {
 	return (
-		<div className='footer-address'>
+		<div className=''>
 			<h3 className='ul-title'>
 				{title}
 
@@ -59,6 +68,7 @@ const FooterList = ({ title, items, className }) => (
 );
 
 const Footer = () => {
+	// Footer DATA
 	const navItemsService = [
 		{ link: '#', label: 'Transportation' },
 		{ link: '#', label: 'Structural' },
@@ -67,9 +77,24 @@ const Footer = () => {
 		{ link: '#', label: 'Construction Management' },
 	];
 
+	const navItemsAbout = [
+		{ link: '#', label: 'Awards' },
+		{ link: '#', label: 'Certifications' },
+		{ link: '#', label: 'OTHON International' },
+	];
+
+	const navItemsCompany = [
+		{ link: '#', label: 'News' },
+		{ link: '#', label: 'Careers' },
+		{ link: '#', label: 'Contact' },
+	];
+
 	const socialData = [
 		{ url: '#', icon: IconFb },
+		{ url: '#', icon: IconIn },
+		{ url: '#', icon: IconYt },
 		{ url: '#', icon: IconIg },
+		{ url: '#', icon: IconTwi },
 	];
 
 	const addressData = [
@@ -82,18 +107,18 @@ const Footer = () => {
 			phone: '713.975.8555',
 		},
 		{
-			title: 'Houston',
-			address: '575 N. Dairy Ashford Rd.',
-			suite: 'Suite 650',
-			cityState: 'Houston, TX 77079',
-			phone: '713.975.8555',
+			title: 'Dallas',
+			address: '2140 Lake Park Blvd.,',
+			suite: 'Suite 200',
+			cityState: 'Richardson, TX 75080',
+			phone: '214.340.7344',
 		},
 		{
 			title: 'Houston',
-			address: '575 N. Dairy Ashford Rd.',
-			suite: 'Suite 650',
-			cityState: 'Houston, TX 77079',
-			phone: '713.975.8555',
+			address: '9442 Capital of Texas Highway North',
+			suite: 'Plaza 1, Suite 500',
+			cityState: 'Austin, TX 78759',
+			phone: '512.940.8602',
 		},
 	];
 
@@ -124,8 +149,10 @@ const Footer = () => {
 					<div className='footer-row'>
 						<nav className='footer-nav footer-block'>
 							<FooterNavList className='' items={navItemsService} title='Services' />
-							<FooterNavList className='' items={navItemsService} title='Services' />
-							<FooterNavList className='' items={navItemsService} title='Services' />
+
+							<FooterNavList className='' items={navItemsAbout} title='About' />
+
+							<FooterNavList className='' items={navItemsCompany} title='Company' />
 						</nav>
 
 						<div className='footer-form footer-block'>
@@ -136,7 +163,7 @@ const Footer = () => {
 
 					<div className='footer-row'>
 						<div className='footer-block'>
-							<div className='footer-nav'>
+							<div className='footer-address'>
 								{addressData.map((data, index) => (
 									<FooterAddress key={index} {...data} />
 								))}
@@ -150,7 +177,7 @@ const Footer = () => {
 
 						<div className='footer-block'>
 							<div className='footer-offices'>
-								<div className=''>
+								<div className='footer-international'>
 									<h3 className='ul-title'>International Offices</h3>
 
 									<p>
@@ -181,7 +208,10 @@ const Footer = () => {
 
 							<div className='footer-policy'>
 								<p>
-									Created with ♡ by <a href='##'>DD.NYC®</a>
+									Created with ♡ by{' '}
+									<a href='https://dd.nyc/' target='_blank' rel='noreferrer noopener'>
+										DD.NYC®
+									</a>
 								</p>
 
 								<div className='footer-social'>
