@@ -1,17 +1,3 @@
-export const bgMixMode = (
-	<svg
-		width='588'
-		height='280'
-		viewBox='0 0 588 280'
-		fill='none'
-		xmlns='http://www.w3.org/2000/svg'
-	>
-		<g style={{ mixBlendMode: 'color' }}>
-			<rect width='100%' height='100%' rx='26.6667' fill='#18306C' />
-		</g>
-	</svg>
-);
-
 export const MobMenuLines = (
 	<svg
 		width='375'

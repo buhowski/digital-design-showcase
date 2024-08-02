@@ -1,11 +1,6 @@
 import heroImg from '../../assets/media/hero.jpg';
 import mobheroImg from '../../assets/media/mob-hero.jpg';
-import {
-	IconHeroLines,
-	IconArrowEx,
-	IconHeroLinesMob,
-	bgMixMode,
-} from '../../assets/SvgIcons';
+import { IconHeroLines, IconArrowEx, IconHeroLinesMob } from '../../assets/SvgIcons';
 import img from '../../assets/media/1.png';
 import img2 from '../../assets/media/2.png';
 import img3 from '../../assets/media/3.png';
