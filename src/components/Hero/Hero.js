@@ -1,12 +1,17 @@
 import heroImg from '../../assets/media/hero.jpg';
 import mobheroImg from '../../assets/media/mob-hero.jpg';
-import { IconHeroLines, IconArrowEx, IconHeroLinesMob } from '../../assets/SvgIcons';
-import img from '../../assets/media/1.jpg';
-import img2 from '../../assets/media/2.jpg';
-import img3 from '../../assets/media/3.jpg';
-import img4 from '../../assets/media/4.jpg';
-import img5 from '../../assets/media/5.jpg';
-import img6 from '../../assets/media/6.jpg';
+import {
+	IconHeroLines,
+	IconArrowEx,
+	IconHeroLinesMob,
+	bgMixMode,
+} from '../../assets/SvgIcons';
+import img from '../../assets/media/1.png';
+import img2 from '../../assets/media/2.png';
+import img3 from '../../assets/media/3.png';
+import img4 from '../../assets/media/4.png';
+import img5 from '../../assets/media/5.png';
+import img6 from '../../assets/media/6.png';
 
 import { useMobileQuery } from '../../hooks/useMediaQuery';
 
@@ -79,14 +84,16 @@ const Hero = () => {
 					<div className='service-cards'>
 						{cardsData.map(({ title, src, span }, index) => (
 							<a href='##' className='service-card' key={index}>
+								<div className='service-card__img'>
+									<img src={src} alt='de' />
+								</div>
+
 								<div className='service-card__title'>
 									<h3 className='h3'>
 										{title} <span>{span}</span>
 									</h3>
 									{IconArrowEx}
 								</div>
-
-								<img src={src} alt='de' />
 							</a>
 						))}
 					</div>

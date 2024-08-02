@@ -66,7 +66,7 @@ const Video = () => {
 							ref={videoRef}
 							src={videoSrc}
 							// poster={videoPoster}
-							// autoPlay
+							autoPlay
 							loop
 							muted
 							playsInline
