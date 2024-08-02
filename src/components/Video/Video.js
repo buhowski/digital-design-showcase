@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 import videoSrc from '../../assets/media/test.mp4';
-import videoPoster from '../../assets/media/about.jpg';
+// import videoPoster from '../../assets/media/about.jpg';
 import {
 	IconSoundOn,
 	IconSoundOff,
@@ -65,7 +65,7 @@ const Video = () => {
 						<video
 							ref={videoRef}
 							src={videoSrc}
-							poster={videoPoster}
+							// poster={videoPoster}
 							// autoPlay
 							loop
 							muted
